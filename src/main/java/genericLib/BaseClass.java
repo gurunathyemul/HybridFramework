@@ -20,7 +20,7 @@ public class BaseClass {
 	public WebDriverUtilies driverutilies=new WebDriverUtilies();
 	@Parameters(value = {"browserName"})
 	@BeforeMethod
-	public void openAPP(String browserName) throws IOException {
+	public void openAPP(@Optional("chrome") String browserName) throws IOException {
 		WebDriverManager.chromedriver().setup();
 		WebDriverManager.edgedriver().setup();
 		if(browserName.equals("chrome")) {
